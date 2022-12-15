@@ -19,7 +19,6 @@ WHERE cohorts.name LIKE $1
 GROUP BY cohort, teacher
 ORDER BY teacher;
 `;
-
 pool.query(noHaxQuery, cohort)
   .then(res => {
     res.rows.forEach(user => {
